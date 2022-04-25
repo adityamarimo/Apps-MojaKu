@@ -39,7 +39,7 @@ class FavoriteViewModelTest{
 
         val result = viewModel.manga.mangaObserver().observedValue
 
-        Mockito.verify(useCase, Mockito.atLeastOnce()).getAllManga()
+        Mockito.verify(useCase, Mockito.atLeastOnce()).getFavManga()
         Mockito.verifyNoMoreInteractions(useCase)
         Assert.assertNotNull(result)
     }
