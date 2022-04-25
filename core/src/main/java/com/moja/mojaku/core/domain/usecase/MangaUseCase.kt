@@ -13,5 +13,5 @@ interface MangaUseCase {
     ): Flow<Resource<List<Manga>>>
 
     fun getFavManga(): Flow<List<Manga>>
-    suspend fun setFavManga(manga: Manga, state: Boolean)
+    fun setFavManga(manga: Manga, state: Boolean)
 }

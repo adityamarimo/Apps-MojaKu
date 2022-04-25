@@ -17,5 +17,5 @@ interface MangaDao {
     suspend fun insertManga(manga: List<MangaEntity>)
 
     @Update
-    suspend fun updateFavManga(manga: MangaEntity)
+    fun updateFavManga(manga: MangaEntity)
 }

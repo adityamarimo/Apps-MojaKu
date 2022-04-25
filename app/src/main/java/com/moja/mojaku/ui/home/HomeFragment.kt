@@ -65,7 +65,13 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        binding.rvHomeManga.adapter = null
+        _binding = null
         super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 }

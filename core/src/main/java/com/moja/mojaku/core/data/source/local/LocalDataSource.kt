@@ -16,7 +16,7 @@ class LocalDataSource @Inject constructor(private val mangaDao: MangaDao) {
     suspend fun insertManga(mangaList: List<MangaEntity>) =
         mangaDao.insertManga(mangaList)
 
-    suspend fun setFavManga(manga: MangaEntity, status: Boolean) {
+    fun setFavManga(manga: MangaEntity, status: Boolean) {
         manga.isFavorite = status
         mangaDao.updateFavManga(manga)
     }

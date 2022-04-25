@@ -20,6 +20,6 @@ class MangaInteractor @Inject constructor(private val mangaRepositoryImpl: Manga
 
     override fun getFavManga() = mangaRepositoryImpl.getFavManga()
 
-    override suspend fun setFavManga(manga: Manga, state: Boolean) =
+    override fun setFavManga(manga: Manga, state: Boolean) =
         mangaRepositoryImpl.setFavManga(manga, state)
 }

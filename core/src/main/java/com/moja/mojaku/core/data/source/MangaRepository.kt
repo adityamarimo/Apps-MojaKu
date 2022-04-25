@@ -6,6 +6,7 @@ import com.moja.mojaku.core.data.source.remote.network.ApiResponse
 import com.moja.mojaku.core.data.source.remote.response.MangaResponsesData
 import com.moja.mojaku.core.domain.model.Manga
 import com.moja.mojaku.core.domain.repository.MangaRepositoryImpl
+import com.moja.mojaku.core.utils.AppExecutors
 import com.moja.mojaku.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -17,7 +18,8 @@ import javax.inject.Singleton
 @Singleton
 class MangaRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: LocalDataSource
+    private val localDataSource: LocalDataSource,
+    private val appExecutors: AppExecutors
 ) : MangaRepositoryImpl {
 
     override fun getAllManga(): Flow<Resource<List<Manga>>> =
@@ -66,8 +68,8 @@ class MangaRepository @Inject constructor(
         }
     }
 
-    override suspend fun setFavManga(manga: Manga, state: Boolean) {
+    override fun setFavManga(manga: Manga, state: Boolean) {
         val mangaEntity = DataMapper.mapDomainToEntity(manga)
-        localDataSource.setFavManga(mangaEntity, state)
+        appExecutors.diskIO().execute { localDataSource.setFavManga(mangaEntity, state) }
     }
 }

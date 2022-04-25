@@ -2,7 +2,6 @@ package com.moja.mojaku.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import io.reactivex.observers.TestObserver
 
 class MangaObserver<T> : Observer<T> {
     var observedValue: T? = null

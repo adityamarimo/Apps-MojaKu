@@ -19,10 +19,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        buildConfigField "String", "BASE_URL", BASE_URL
-        buildConfigField "String", "MANGA", ENDPOINT_MANGA
-        buildConfigField "String", "SEARCH", ENDPOINT_SEARCH
     }
 
     buildTypes {

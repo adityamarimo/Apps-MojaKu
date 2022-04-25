@@ -11,8 +11,8 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
-import org.junit.Assert.assertNull
-import org.mockito.Mockito
+import org.mockito.Mockito.*
+
 
 @ExperimentalCoroutinesApi
 class SearchViewModelTest {
@@ -34,18 +34,24 @@ class SearchViewModelTest {
         val query = "Berserk"
         val limit = 10
         val page = 1
-        val useCase = Mockito.mock(MangaUseCase::class.java)
+        val useCase = mock(MangaUseCase::class.java)
         val flow = flowOf(Resource.Success(DummyData.listManga()))
 
-        Mockito.`when`(useCase.getSearch(query, page, limit))
+        /*val testUseCase = Mockito.mock(MangaUseCase::class.java)
+
+        val manga = Manga()
+        doNothing().`when`(testUseCase).setFavManga(manga, true)
+        verify(testUseCase, atLeastOnce()).getFavManga()*/
+
+        `when`(useCase.getSearch(query, page, limit))
             .thenReturn(flow)
 
         val viewModel = SearchViewModel(useCase)
 
         val result = viewModel.search(query).mangaObserver().observedValue
 
-        Mockito.verify(useCase, Mockito.atLeastOnce()).getSearch(query, page, limit)
-        Mockito.verifyNoMoreInteractions(useCase)
+        verify(useCase, atLeastOnce()).getSearch(query, page, limit)
+        verifyNoMoreInteractions(useCase)
         Assert.assertNotNull(result)
 
     }

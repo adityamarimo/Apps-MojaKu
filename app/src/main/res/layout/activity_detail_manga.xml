@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorOnPrimary"
-    tools:context=".ui.detail.DetailMangaActivity">
+    tools:context=".ui.detail.DetailMangaActivity"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:id="@+id/img_detail_banner"
@@ -14,10 +15,10 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/string_image"
         android:scaleType="centerCrop"
-        tools:src="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
     <View
         android:layout_width="match_parent"
@@ -58,7 +59,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/string_image"
             android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars"/>
+            tools:src="@tools:sample/avatars" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView

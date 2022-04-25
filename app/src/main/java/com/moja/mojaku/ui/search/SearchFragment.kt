@@ -80,6 +80,7 @@ class SearchFragment : Fragment() {
 
                     return true
                 }
+
                 override fun onQueryTextChange(newText: String?): Boolean {
                     return false
                 }
@@ -87,5 +88,10 @@ class SearchFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        binding.rvSearchManga.adapter = null
+        _binding = null
+        super.onDestroyView()
+    }
 
 }
