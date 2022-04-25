@@ -1,0 +1,36 @@
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "com.google.android.material:material:$material_version"
+
+    implementation "io.coil-kt:coil:$coil_version"
+
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
+    kaptAndroidTest "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
+
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbinding_version"
+
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$dynamic_features_version"
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    testImplementation "androidx.arch.core:core-testing:$archcore_testing_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutines_testing_version"
+}

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_information_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/text_information"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_title" />
+
+        <TextView
+            android:id="@+id/tv_information_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_type"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/guide_alternative_main"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/tv_information_type_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guide_alternative_main"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Manga" />
+
+        <TextView
+            android:id="@+id/tv_information_volumes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_volumes"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_type"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_type"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_type" />
+
+        <TextView
+            android:id="@+id/tv_information_volumes_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_type_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_type_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_volumes"
+            tools:text="41" />
+
+        <TextView
+            android:id="@+id/tv_information_chapters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_chapters"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_volumes"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_volumes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_volumes" />
+
+        <TextView
+            android:id="@+id/tv_information_chapters_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_volumes_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_volumes_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_chapters"
+            tools:text="380" />
+
+        <TextView
+            android:id="@+id/tv_information_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_status"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_chapters"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_chapters"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_chapters" />
+
+        <TextView
+            android:id="@+id/tv_information_status_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_chapters_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_chapters_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_status"
+            tools:text="On Hiatus" />
+
+        <TextView
+            android:id="@+id/tv_information_published"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_published"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_status"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_status"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_status" />
+
+        <TextView
+            android:id="@+id/tv_information_published_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_status_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_status_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_published"
+            tools:text="Aug 25, 1989 to Sep 10, 2021" />
+
+        <TextView
+            android:id="@+id/tv_information_genres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_genres"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_published"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_published"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_published_value" />
+
+        <TextView
+            android:id="@+id/tv_information_genres_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_published_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_published_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_genres"
+            tools:text="Action, Adventure, Award Winning, Drama, Fantasy, Horror, Supernatural" />
+
+        <TextView
+            android:id="@+id/tv_information_themes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_themes"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_genres"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_genres"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_genres_value" />
+
+        <TextView
+            android:id="@+id/tv_information_themes_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_genres_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_genres_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_themes"
+            tools:text="Gore, Military, Mythology, Psychological" />
+
+        <TextView
+            android:id="@+id/tv_information_demographic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_demographic"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_themes"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_themes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_themes_value" />
+
+        <TextView
+            android:id="@+id/tv_information_demographic_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_themes_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_themes_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_demographic"
+            tools:text="Seinen" />
+
+        <TextView
+            android:id="@+id/tv_information_serialization"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_serialization"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_demographic"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_demographic"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_demographic_value" />
+
+        <TextView
+            android:id="@+id/tv_information_serialization_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_demographic_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_demographic_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_serialization"
+            tools:text="Young Animal" />
+
+        <TextView
+            android:id="@+id/tv_information_authors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_authors"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_serialization"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_serialization"
+            app:layout_constraintTop_toBottomOf="@+id/tv_information_serialization_value" />
+
+        <TextView
+            android:id="@+id/tv_information_authors_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_information_serialization_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_information_serialization_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_information_authors"
+            tools:text="Miura, Kentarou" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_alternative_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="108dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

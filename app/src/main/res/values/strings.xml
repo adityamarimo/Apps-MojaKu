@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MojaKu</string>
+    <string name="title_favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_score">Score</string>
+    <string name="text_ranked">Ranked</string>
+    <string name="text_popularity">Popularity</string>
+    <string name="text_members">Members</string>
+    <string name="text_alternative">Alternative Titles</string>
+    <string name="text_synonyms">Synonyms :</string>
+    <string name="text_japanese">Japanese :</string>
+    <string name="text_english">English :</string>
+    <string name="text_information">Information</string>
+    <string name="text_chapters">Chapters</string>
+    <string name="text_volumes">Volumes :</string>
+    <string name="text_type">Type :</string>
+    <string name="text_status">Status :</string>
+    <string name="text_published">Published :</string>
+    <string name="text_genres">Genres :</string>
+    <string name="text_themes">Themes :</string>
+    <string name="text_demographic">Demographic :</string>
+    <string name="text_serialization">Serialization :</string>
+    <string name="text_authors">Authors :</string>
+    <string name="text_source_from_myanimelist">Source From MyAnimeList</string>
+    <string name="text_home">Home</string>
+    <string name="text_search">Search</string>
+    <string name="text_favorite">Favorite</string>
+    <string name="tab_synopsis">Synopsis</string>
+    <string name="tab_information">Information</string>
+    <string name="string_fab">Floating Action Button Favorite</string>
+    <string name="text_error">Oops.. something went wrong</string>
+    <string name="text_search_manga">Search Manga</string>
+</resources>

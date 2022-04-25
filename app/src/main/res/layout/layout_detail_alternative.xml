@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_alternative_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/text_alternative"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_alternative_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_alternative_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_alternative_title" />
+
+        <TextView
+            android:id="@+id/tv_alternative_synonyms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_synonyms"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/guide_alternative_main"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/tv_alternative_synonyms_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guide_alternative_main"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Berserk: The Prototype" />
+
+        <TextView
+            android:id="@+id/tv_alternative_japanese"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_japanese"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_alternative_synonyms"
+            app:layout_constraintStart_toStartOf="@+id/tv_alternative_synonyms"
+            app:layout_constraintTop_toBottomOf="@+id/tv_alternative_synonyms_value" />
+
+        <TextView
+            android:id="@+id/tv_alternative_japanese_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_alternative_synonyms_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_alternative_synonyms_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_alternative_japanese"
+            tools:text="ベルセルク" />
+
+        <TextView
+            android:id="@+id/tv_alternative_english"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/text_english"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_alternative_japanese"
+            app:layout_constraintStart_toStartOf="@+id/tv_alternative_japanese"
+            app:layout_constraintTop_toBottomOf="@+id/tv_alternative_japanese" />
+
+        <TextView
+            android:id="@+id/tv_alternative_english_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_alternative_japanese_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_alternative_japanese_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_alternative_english"
+            tools:text="Berserk" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_alternative_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="108dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
