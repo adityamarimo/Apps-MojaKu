@@ -28,4 +28,12 @@ class SplashScreenActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+        if (onBackPressedDispatcher.hasEnabledCallbacks()) {
+            super.onBackPressed()
+        } else {
+            finishAfterTransition()
+        }
+    }
 }

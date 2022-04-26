@@ -1,5 +1,6 @@
 package com.moja.mojaku.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class MangaAdapter : RecyclerView.Adapter<MangaAdapter.ListViewHolder>() {
     private var listData = ArrayList<Manga>()
     var onItemClick: ((Manga) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<Manga>?) {
         if (newListData == null) return
         listData.clear()
