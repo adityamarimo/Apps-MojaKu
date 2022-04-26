@@ -61,7 +61,7 @@ class FavoriteFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun getListManga() {
-        favoriteViewModel.manga.observe(this, { manga ->
+        favoriteViewModel.manga.observe(viewLifecycleOwner, { manga ->
             binding?.pbFavManga?.visibility = View.GONE
             mangaAdapter.setData(manga)
             if (manga.isNullOrEmpty()) {

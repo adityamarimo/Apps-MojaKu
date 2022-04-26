@@ -1,5 +1,6 @@
 package com.moja.mojaku.core.di
 
+import com.moja.mojaku.core.BuildConfig
 import com.moja.mojaku.core.data.source.remote.network.ApiService
 import com.moja.mojaku.core.utils.SecretDoor
 import dagger.Module
@@ -26,8 +27,10 @@ class NetworkModule {
             .add(hostname, SecretDoor.getSHA3())
             .build()
 
+        val loggingInterceptor = if(BuildConfig.DEBUG) { HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY) }else { HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE) }
+
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .addInterceptor(loggingInterceptor)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .certificatePinner(certificatePinner)
