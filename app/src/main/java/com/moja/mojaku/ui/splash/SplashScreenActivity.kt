@@ -3,27 +3,26 @@ package com.moja.mojaku.ui.splash
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.moja.mojaku.R
-import com.moja.mojaku.ui.MainActivity
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.moja.mojaku.databinding.ActivitySplashScreenBinding
+import com.moja.mojaku.ui.main.MainActivity
+import com.moja.mojaku.ui.base.BaseActivity
+import kotlinx.coroutines.*
 
 @SuppressLint("CustomSplashScreen")
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
+    override fun getViewBinding(): ActivitySplashScreenBinding =
+        ActivitySplashScreenBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        lifecycleScope.launch {
+        CoroutineScope(Dispatchers.Main).launch {
             delay(1500)
-            withContext(Dispatchers.Main) {
-                val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
-                startActivity(intent)
+
+            Intent(this@SplashScreenActivity, MainActivity::class.java).also {
+                startActivity(it)
                 finish()
             }
         }

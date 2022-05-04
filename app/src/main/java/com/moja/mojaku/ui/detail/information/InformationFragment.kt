@@ -2,28 +2,17 @@ package com.moja.mojaku.ui.detail.information
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.moja.mojaku.core.domain.model.Manga
 import com.moja.mojaku.databinding.FragmentInformationBinding
+import com.moja.mojaku.ui.base.BaseFragment
 import com.moja.mojaku.ui.detail.DetailMangaActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class InformationFragment : Fragment() {
-
-    private var _binding: FragmentInformationBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentInformationBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class InformationFragment : BaseFragment<FragmentInformationBinding>() {
+    override fun getViewBinding(): FragmentInformationBinding =
+        FragmentInformationBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +26,7 @@ class InformationFragment : Fragment() {
     private fun showInformation(detailManga: Manga?) {
         detailManga?.let {
             with(binding) {
-                with(layoutHeadline) {
+                with(this!!.layoutHeadline) {
                     tvHeadlineScore.text = it.scored.toString()
                     tvHeadlineUsers.text = it.scored_by.toString() + " users"
                     tvHeadlineRankedCount.text = "#" + it.rank.toString()
@@ -69,10 +58,4 @@ class InformationFragment : Fragment() {
             }
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

@@ -2,32 +2,21 @@ package com.moja.mojaku.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.moja.mojaku.core.data.source.Resource
 import com.moja.mojaku.core.ui.MangaAdapter
 import com.moja.mojaku.databinding.FragmentHomeBinding
+import com.moja.mojaku.ui.base.BaseFragment
 import com.moja.mojaku.ui.detail.DetailMangaActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val homeViewModel: HomeViewModel by viewModels()
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,38 +29,27 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
 
-            homeViewModel.manga.observe(viewLifecycleOwner, { manga ->
-                if (manga != null) {
-                    when (manga) {
-                        is Resource.Loading -> binding.pbHomeManga.visibility = View.VISIBLE
+            homeViewModel.manga.observe(viewLifecycleOwner, {
+                if (it != null) {
+                    when (it) {
+                        is Resource.Loading -> binding!!.pbHomeManga.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            binding.pbHomeManga.visibility = View.GONE
-                            mangaAdapter.setData(manga.data)
+                            binding!!.pbHomeManga.visibility = View.GONE
+                            mangaAdapter.setData(it.data)
                         }
                         is Resource.Error -> {
-                            binding.pbHomeManga.visibility = View.GONE
-                            binding.layoutHomeError.root.visibility = View.VISIBLE
+                            binding!!.pbHomeManga.visibility = View.GONE
+                            binding!!.layoutHomeError.root.visibility = View.VISIBLE
                         }
                     }
                 }
             })
 
-            with(binding.rvHomeManga) {
+            with(binding!!.rvHomeManga) {
                 layoutManager = GridLayoutManager(context, 2)
                 setHasFixedSize(true)
                 adapter = mangaAdapter
             }
         }
-    }
-
-    override fun onDestroyView() {
-        binding.rvHomeManga.adapter = null
-        _binding = null
-        super.onDestroyView()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

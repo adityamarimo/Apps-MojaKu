@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
@@ -14,10 +13,12 @@ import com.jakewharton.rxbinding2.view.RxView
 import com.moja.mojaku.R
 import com.moja.mojaku.core.domain.model.Manga
 import com.moja.mojaku.databinding.ActivityDetailMangaBinding
+import com.moja.mojaku.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailMangaActivity : AppCompatActivity() {
+class DetailMangaActivity : BaseActivity<ActivityDetailMangaBinding>() {
+    private val detailMangaViewModel: DetailMangaViewModel by viewModels()
 
     companion object {
         const val DATA_MANGA = "data_manga"
@@ -29,20 +30,18 @@ class DetailMangaActivity : AppCompatActivity() {
         )
     }
 
-    private lateinit var binding: ActivityDetailMangaBinding
-
-    private val detailMangaViewModel: DetailMangaViewModel by viewModels()
+    override fun getViewBinding(): ActivityDetailMangaBinding =
+        ActivityDetailMangaBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailMangaBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         val detailManga = intent.getParcelableExtra<Manga>(DATA_MANGA)
 
         setTabDetail()
         showDetailManga(detailManga)
     }
+
 
     private fun setTabDetail() {
         val sectionsPagerAdapter = TabDetailAdapter(this)
@@ -65,13 +64,13 @@ class DetailMangaActivity : AppCompatActivity() {
                 tvDetailAuthor.text = it.authors
                 tvDetailStatus.text = it.status
 
-                imgDetailPoster.load(it.images){
+                imgDetailPoster.load(it.images) {
                     crossfade(true)
                     placeholder(R.drawable.img_placeholder)
                     error(R.drawable.ic_broken)
                 }
 
-                imgDetailBanner.load(it.images){
+                imgDetailBanner.load(it.images) {
                     crossfade(true)
                     placeholder(R.drawable.img_placeholder)
                     error(R.drawable.ic_broken)
